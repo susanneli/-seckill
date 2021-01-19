@@ -16,10 +16,10 @@
    商品管理员：用户名为mema，密码为mema123!
    订单管理员：用户名为orma，密码为orma123?
 ### 2.用户端(VUE+Redis+Rabbitmq)
-    (1) thinkphp5\public\temp\login\login.html为用户登录界面,总共设置了四个用户。
-    用户名:ll   密码:ll123?
-    用户名:ls   密码:lm123?
-    用户名:an  密码:an134? 
+   (1) thinkphp5\public\temp\login\login.html为用户登录界面,总共设置了四个用户。
+   用户名:ll   密码:ll123?
+   用户名:ls   密码:lm123?
+   用户名:an  密码:an134? 
    用户名:deg   密码: mmere156
    (2) thinkphp5\public\temp/login/select.html为抢购界面,其中商品号处只能输入1。
    (3)安装redis、php安装redis扩展，抢购之前，需要在redis中创建num键，并将商品的库存值，从数据库中读取商品的库存数赋给该值。
