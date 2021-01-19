@@ -1,6 +1,6 @@
 # 商品秒杀系统  
     Thinkphp5框架实现后台管理端，VUE框架实现用户端 
-    环境：Thinkphp5、Apache、redis、php安装redis扩展、rabbitmq
+    环境：Thinkphp5、Apache、redis、php安装redis扩展、Rabbitmq
 ## 一、项目功能介绍
 ### 1.后台管理端(Thinkphp5)
     本系统后台管理端总共设立了三种角色，系统管理员、商品管理员、订单管理员，登录成功后，依据存在session中的role_id去crm_role表中查找该角色id对应的rules,根据rules去menu表中查找其对应的权限生成目录。其中系统管理员可以对后台用户表(vipuser)、顾客表(customerlist)、日志表(admi_log)、目录表(menu)、角权限管理员(crm_role)五个表进行增删改查；商品管理员可以对商品表(m_goods)进行增删改查；订单管理员可以对订单表(m_order)进行增删改查。  
@@ -11,17 +11,18 @@
     如果缓存处判断库存足够，就将信息通过发送到send.go文件中。在send.go文件中注册rpc服务，监听5050端口，接收并处理来自select.php的请求，使用rabbitmq消息队列对消息进行异步处理，receive.go文件从消息队列中主动的拉取请求消息进行业务处理。在receive.go中再次对商品号、库存等信息进行检查，防止超卖现象，然后去数据库中减库存、生成订单记录、修改日志信息。queue.php文件对日志表进行轮询，判断是否购买成功，并将结果反馈给用户。
 ## 二、项目安装指南
 ### 1.后台管理端(Thinkphp5)
+    在服务器上部署好thinkphp5，运行环境为php7.2
     后台管理端的controller、model、view 等文件夹在thinkphp5\application\admin目录下，登录界面为admin/nlogin/index.三种角色的用户名密码如下:  
-    系统管理员：用户名为sead，密码为sead1231  
-    商品管理员：用户名为mema，密码为mema123!  
-    订单管理员：用户名为orma，密码为orma123?  
+      系统管理员：用户名为sead，密码为sead1231  
+      商品管理员：用户名为mema，密码为mema123!  
+      订单管理员：用户名为orma，密码为orma123?  
 ### 2.用户端(VUE+Redis+Rabbitmq)
-    (1) thinkphp5\public\temp\login\login.html为用户登录界面,总共设置了四个用户。  
-    用户名:ll   密码:ll123?  
-    用户名:ls   密码:lm123?  
-    用户名:an  密码:an134?   
-    用户名:deg   密码: mmere156  
-    (2) thinkphp5\public\temp/login/select.html为抢购界面,其中商品号处只能输入1。  
+    (1)thinkphp5\public\temp\login\login.html为用户登录界面,总共设置了四个用户。  
+      用户名:ll   密码:ll123?  
+      用户名:ls   密码:lm123?  
+      用户名:an   密码:an134?   
+      用户名:deg  密码: mmere156  
+    (2)thinkphp5/public/temp/login/select.html为抢购界面,其中商品号处只能输入1。  
     (3)安装redis、php安装redis扩展，抢购之前，需要在redis中创建num键，并将商品的库存值，从数据库中读取商品的库存数赋给该值。  
     (4)go文件夹下的 send.go文件通过监听5050端口，获取来自select.php文件传递的消息，如果通信成功，将接收到的消息发送到rabbitmq消息队列中; receive.go文件用于逐条处理消息队列中的消息;go文件夹下的receive和send文件为对receive.go和send.go进行交叉编译产生的结果。使用时，可将这两个文件上传到服务器上，通过./receive与./send的方法运行，注意服务器上要安装Rabbitmq  
 ### 3.3.数据库  
