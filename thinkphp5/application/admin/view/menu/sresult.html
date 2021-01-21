@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商品秒杀后台系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/temp/X-admin/css/font.css">
+	<link rel="stylesheet" href="/temp/X-admin/css/xadmin.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+    <script src="/temp/X-admin/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/temp/X-admin/js/xadmin.js"></script>
+
+</head>
+<body>
+    <div class="wrapper">
+        <!-- 右侧主体开始 -->
+        <div class="page-content">
+          <div class="content">
+            <!-- 右侧内容框架，更改从这里开始 -->
+        
+            <form class="layui-form"  action="do_dee_edit">
+                       <div class="layui-form-item">
+            <label for="stnumber" class="layui-form-label" >
+                <span class="x-red"></span>功能id
+            </label>
+            <div class="layui-input-inline">
+              <input type="text" id="id" name="rule_id" required lay-verify="required" readonly
+                        autocomplete="off" value={$adee.rule_id} class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red"></span>父id
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="level-kiss" name="parentid" required=""  lay-verify="required"
+                autocomplete="off" value="{$adee.parentid}" class="layui-input">
+            </div>
+        </div>
+                <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red"></span>功能名
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="level-kiss" name="name" required=""  lay-verify="required"
+                autocomplete="off" value="{$adee.name}" class="layui-input">
+            </div>
+        </div>
+                        <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red"></span>图标
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="level-kiss" name="icon" required=""  lay-verify="required"
+                autocomplete="off" value="{$adee.icon}" class="layui-input" onfocus=this.blur()>
+            </div>
+        </div>
+                        <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red"></span>控制器
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="level-kiss" name="c" required=""  lay-verify="required"
+                autocomplete="off" value="{$adee.c}" class="layui-input" onfocus=this.blur()>
+            </div>
+        </div>
+                                <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red"></span>方法
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="level-kiss" name="a" required=""  lay-verify="required"
+                autocomplete="off" value="{$adee.a}" class="layui-input" onfocus=this.blur()>
+            </div>
+        </div>
+ <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red"></span>是否显示（1显示，2不显示）
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="level-kiss" name="display" required=""  lay-verify="required"
+                autocomplete="off" value="{$adee.display}" class="layui-input" onfocus=this.blur()>
+            </div>
+        </div>
+         <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red">*</span>listorder
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="level-kiss" name="listorder" required=""  lay-verify="required"
+                autocomplete="off" value={$adee.listorder} class="layui-input" onfocus=this.blur()>
+            </div>
+        </div>
+               
+            
+            </form>
+            <!-- 右侧内容框架，更改从这里结束 -->
+          </div>
+        </div>
+        <!-- 右侧主体结束 -->
+    </div>
+    <!-- 中部结束 -->
+</body>
+</html>

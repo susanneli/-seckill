@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商品秒杀后台系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/temp/X-admin/css/font.css">
+	<link rel="stylesheet" href="/temp/X-admin/css/xadmin.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+    <script src="/temp/X-admin/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/temp/X-admin/js/xadmin.js"></script>
+
+</head>
+<body>
+     <form class="layui-form" action="add">
+            <div class="layui-form-item">
+            <label for="stnumber" class="layui-form-label" >
+                <span class="x-red">*</span>id
+            </label>
+           <div class="layui-input-inline">
+                                  <input type="text" id="id" name="id" required lay-verify="required"
+                        autocomplete="off" class="layui-input">
+            </div>
+        </div>
+         <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red">*</span>模块
+            </label>
+            <div class="layui-input-inline">
+                                  <input type="text" id="level-kiss" name="m" required="" lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+         <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red">*</span>控制器
+            </label>
+            <div class="layui-input-inline">
+                                  <input type="text" id="level-kiss" name="c" required="" lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+         <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red">*</span>方法
+            </label>
+            <div class="layui-input-inline">
+                                  <input type="text" id="level-kiss" name="a" required="" lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+                 <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red">*</span>querystring
+            </label>
+            <div class="layui-input-inline">
+                                  <input type="text" id="level-kiss" name="querystring" required="" lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+                 <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red">*</span>userid
+            </label>
+            <div class="layui-input-inline">
+                                  <input type="text" id="level-kiss" name="userid" required="" lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red">*</span>用户名
+            </label>
+            <div class="layui-input-inline">
+                                  <input type="text" id="level-kiss" name="username" required="" lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+         <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red">*</span>ip地址
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="level-kiss" name="ip" required=""  lay-verify="required"
+                autocomplete="off"  class="layui-input">
+            </div>
+        </div>
+                 <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red">*</span>访问时间
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="level-kiss" name="time" required=""  lay-verify="required"
+                autocomplete="off"  class="layui-input">
+            </div>
+        </div>
+               
+        <div class="layui-form-item">
+            <label for="L_repass" class="layui-form-label">
+            </label>
+            <button  class="layui-btn" lay-filter="save" lay-submit="">
+                保存
+            </button>
+        </div>
+    </form>
+    <script>
+    //百度统计可去掉
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</body>
+</html>

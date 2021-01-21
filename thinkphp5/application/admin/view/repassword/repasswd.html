@@ -1,0 +1,45 @@
+<!doctype html>
+  <form class="layui-form" action="re">
+   
+                       <div class="layui-form-pane" style="text-align: center;">
+                  <div class="layui-form-item" style="display: inline-block;">
+               <label> <span class="x-red"></span><h1 align="center">&nbsp&nbsp输 入 旧 密 码&nbsp</h1>
+            </label></div>
+            <div class="layui-input-inline" style="text-align: center;" >
+                <input type="password" id="id" name="oldpasswd" required="" lay-verify="required"
+                autocomplete="off"  class="layui-input">
+            </div>
+        </div>
+                       <div class="layui-form-pane" style="text-align: center;">
+                  <div class="layui-form-item" style="display: inline-block;">
+               <label> <span class="x-red"></span><h1 align="center">&nbsp&nbsp输 入 新 密 码&nbsp</h1>
+            </label></div>
+            <div class="layui-input-inline" style="text-align: center;" >
+                <input type="password" id="id" name="newpasswd" required="" lay-verify="required"
+                autocomplete="off"  class="layui-input"  >
+            </div>
+        </div>
+                               <div class="layui-form-pane" style="text-align: center;">
+                  <div class="layui-form-item" style="display: inline-block;">
+               <label> <span class="x-red"></span><h1 align="center">再次输入新密码</h1>
+            </label></div>
+            <div class="layui-input-inline" style="text-align: center;" >
+                <input type="password" id="id" name="renewpasswd" required="" lay-verify="required"
+                autocomplete="off"  class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item" align="center">
+            <label for="L_repass" class="layui-form-label">
+            </label>
+            <button  class="layui-btn" lay-filter="save" lay-submit="">
+                提交
+            </button>
+        </div>
+            <div class="layui-form-item" align="center">
+        注意新密码长度必须为8-20位，且必须包括数字、字母、特殊字符中的至少两种，其中特殊字符只能为!#$%^&?*！
+    </div>
+    </form>
+
+
+</body>
+</html>

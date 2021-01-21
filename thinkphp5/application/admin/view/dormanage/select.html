@@ -1,0 +1,34 @@
+<!doctype html>
+<head>
+	<meta charset="UTF-8">
+	<title>商品秒杀后台系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/temp/X-admin/css/font.css">
+	<link rel="stylesheet" href="/temp/X-admin/css/xadmin.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+    <script src="/temp/X-admin/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/temp/X-admin/js/xadmin.js"></script>
+
+</head>
+
+<body>
+
+            <form class="layui-form xbs" action="sresult" >
+                <div class="layui-form-pane" style="text-align: center;">
+                  <div class="layui-form-item" style="display: inline-block;">
+                    <label class="layui-form-label xbs768">查找</label>
+                    
+                    <div class="layui-input-inline">
+                      <input type="text" name="goods_id"  placeholder="请输入商品号" autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-input-inline" style="width:80px">
+                        <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+                    </div>
+                  </div>
+                </div> 
+            </form>
+</body>
+</html>

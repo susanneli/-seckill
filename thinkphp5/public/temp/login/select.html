@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>秒杀系统</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.1/vue.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<!-- 1. 导入css -->
+		<link href="https://cdn.bootcss.com/element-ui/2.14.1/theme-chalk/index.css" rel="stylesheet">
+		<!-- 2. 引入vue和vue-router-->
+		<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+		<!-- 未使用vue路由功能可不导入 -->
+		<script src="https://cdn.bootcss.com/vue-router/3.0.6/vue-router.js"></script>
+		<!-- 3. 引入ElementUI组件 -->
+		<script src="https://cdn.bootcss.com/element-ui/2.14.1/index.js"></script>
+
+
+</head>
+<body>
+    
+  <div id="app">
+ 抢购开始时间为:2021年1月17日10点55分<br>
+ 抢购结束时间为:2021年1月30日10点55分<br>
+ 商品号 : 1<br>
+ 商品名 : 洗衣液<br>
+ 商品价格 : 88元<br>
+ 输入商品id<input type="text" v-model="loginForm.goods_id"  /><br>
+    <button @click="login">立即抢购</button>
+  </div>
+
+  <script>
+    var app = new Vue({
+        el: '#app',
+        data:{
+            loginForm: {
+            goods_id: '', 
+           
+            }
+            
+        },
+        methods:{
+            login:function() {
+                let _this = this;
+                if (this.loginForm.goods_id != 1 ) {
+                    alert('商品号输入错误');
+                }
+                else{
+                let token = localStorage.getItem('token');
+              let data = new FormData();
+             data.append('goods_id',this.loginForm.goods_id);
+             data.append('token',token)
+             axios.post(`//121.4.121.161/temp/login/select.php`,data)
+          .then(res=>{
+      console.log('res=>',res);  
+      if(res.status==200){
+           if(res.data==0){
+              alert('排队中，请等待结果');
+              axios.post(`//121.4.121.161/temp/login/queue.php`,data)
+          .then(res=>{
+              if(res.status==200){
+                  if(res.data==2){
+                  alert('购买成功');
+                  }
+                  else{
+                      alert('购买失败');
+                  }
+              }
+          })
+           }
+           else if(res.data==1){
+                alert('已经提交过请求，请勿重复提交')
+           }
+             else if(res.data==2){
+                 localStorage.removeItem('token');
+                 alert('登录失败,请重新登录');
+                  window.location.href="http://121.4.121.161/temp/login/Nlogin.html";
+           }
+             else if(res.data==3){
+              alert('活动未开始');
+           }
+             else if(res.data==4){
+                alert('活动已经结束')
+           }
+              else if(res.data==5){
+                alert('抢购失败,商品已被抢光');
+           }
+           else if(res.data==6){
+               alert('已经购买成功，请勿重复购买')
+           }
+           else{
+               alert('抢购失败');
+           }
+      }
+      else{
+          alert('请求出错');
+      }
+           
+          // window.location.href="http://121.4.121.161/temp/login/queue.html";
+     
+     
+      })
+                }
+                    }
+                  
+                }
+                
+        
+           })
+  </script>
+  
+</body>
+</html>

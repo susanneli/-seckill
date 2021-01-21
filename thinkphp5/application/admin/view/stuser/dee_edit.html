@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商品秒杀后台系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/temp/X-admin/css/font.css">
+	<link rel="stylesheet" href="/temp/X-admin/css/xadmin.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+    <script src="/temp/X-admin/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/temp/X-admin/js/xadmin.js"></script>
+
+</head>
+<body>
+    <!-- 中部开始 -->
+    <div class="wrapper">
+        <!-- 右侧主体开始 -->
+        <div class="page-content">
+          <div class="content">
+            <!-- 右侧内容框架，更改从这里开始 -->
+            <form class="layui-form"  action="do_dee_edit">
+                       <div class="layui-form-item">
+            <label for="stnumber" class="layui-form-label" >
+                <span class="x-red">*</span>顾客id
+            </label>
+            <div class="layui-input-inline">
+              <input type="text" id="L_id" name="user_id" required lay-verify="required" readonly
+                        autocomplete="off" value={$adee.user_id} class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="role" class="layui-form-label">
+                <span class="x-red">*</span>顾客账号
+            </label>
+            <div class="layui-input-inline">
+                                  <input type="text" id="L_id" name="username" required lay-verify="required"
+                        autocomplete="off" value={$adee.username} class="layui-input">
+            </div>
+        </div>
+         <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red">*</span>顾客密码
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="level-kiss" name="password" required=""  lay-verify="required"
+                autocomplete="off" value={$adee.password} class="layui-input">
+            </div>
+        </div>
+                 <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red">*</span>顾客地址
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="level-kiss" name="local" required=""  lay-verify="required"
+                autocomplete="off" value={$adee.local} class="layui-input">
+            </div>
+        </div>
+                <div class="layui-form-item">
+                    <label for="L_sign" class="layui-form-label">
+                    </label>
+                    <button class="layui-btn" key="set-mine" lay-filter="save" lay-submit>
+                        保存
+                    </button>
+                </div>
+            </form>
+            <!-- 右侧内容框架，更改从这里结束 -->
+          </div>
+        </div>
+        <!-- 右侧主体结束 -->
+    </div>
+    <!-- 中部结束 -->
+</body>
+</html>

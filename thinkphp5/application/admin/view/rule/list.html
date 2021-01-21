@@ -1,0 +1,101 @@
+<!doctype html>
+
+<body>
+   
+    <div class="wrapper">
+       
+        <div class="page-content">
+          <div class="content">
+            <!-- 右侧内容框架，更改从这里开始 -->
+            <form class="layui-form xbs" action="" >
+                <div class="layui-form-pane" style="text-align: center;">
+                  <div class="layui-form-item" style="display: inline-block;">
+                   
+                
+                  </div>
+                </div> 
+            </form>
+            <xblock><button class="layui-btn" onclick="level_add('添加权限','info','','500','400')"><i class="layui-icon">&#xe608;</i>添加</button><button class="layui-btn" onclick="level_add('查找角色信息','select','','500','450')"><i class="layui-icon">&#xe615;</i>查找</button></xblock>
+    
+             <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>角色id</th>
+                        <th>角色名</th>
+                        <th>权限</th>
+                         <th>
+                            操作
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {volist name="lists" id="vo"}
+                    
+                    <tr>
+                        <td>{$vo.role_id}</td>
+                        <td>{$vo.name}</td>
+                        <td>{$vo.rules}</td>
+                        <td class="td-manage">
+                          <a title="编辑" href="javascript:;" onclick="member_edit('编辑','dee_edit?void={$vo.role_id}','4','500','400')"
+                            class="ml-5" style="text-decoration:none">
+                                <i class="layui-icon">&#xe642;</i>
+                            </a>
+                          <a title="删除" href="javascript:;"  onclick="member_del(this,'{$vo.role_id}')"   style="text-decoration:none">
+                                 <i class="layui-icon" >&#xe640;</i>
+                             </a>
+
+                        </td>
+                    </tr>
+                    {/volist} 
+                </tbody>
+            </table>
+           
+            <!-- 右侧内容框架，更改从这里结束 -->
+          </div>
+        </div>
+        <!-- 右侧主体结束 -->
+    </div>
+    <!-- 中部结束 -->
+    <!-- 底部开始 -->
+
+    <!-- 底部结束 -->
+    <!-- 背景切换开始 -->
+
+    <!-- 背景切换结束 -->
+    <script>
+    //百度统计可去掉
+        // 用户-编辑
+        function member_edit (title,url,id,w,h) {
+            x_admin_show(title,url,w,h); 
+        }
+            // 等级-编辑
+
+            /*等级-删除*/
+             function level_add (title,url,id,w,h) {
+                
+                x_admin_show(title,url,w,h); 
+                
+            }
+            function member_del(obj,id){
+            layer.confirm('确认要删除这条记录吗？',function(index){
+                //发异步删除数据
+                $(obj).parents("tr").remove();
+                //alert(id);
+                var str = "{:url('delete',['role_id'=>'pid'])}";
+                var url=str.replace('pid',id);
+                window.location.href=url;
+                layer.msg('已删除!',{icon:1,time:1000});
+            });
+
+          
+        }
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</body>
+</html>

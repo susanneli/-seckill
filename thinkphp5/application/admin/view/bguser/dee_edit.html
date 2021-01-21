@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商品秒杀后台系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/temp/X-admin/css/font.css">
+	<link rel="stylesheet" href="/temp/X-admin/css/xadmin.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+    <script src="/temp/X-admin/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/temp/X-admin/js/xadmin.js"></script>
+
+</head>
+<body>
+
+
+    <div class="wrapper">
+        <div class="page-content">
+          <div class="content">
+            <form class="layui-form"  action="do_dee_edit">
+                       <div class="layui-form-item">
+            <label for="stnumber" class="layui-form-label" >
+                <span class="x-red">*</span>用户id
+            </label>
+            <div class="layui-input-inline">
+              <input type="text" id="L_id" name="user_id" required lay-verify="required" readonly
+                        autocomplete="off" value={$adee.user_id} class="layui-input">
+            </div>
+        </div>
+ <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red">*</span>用户名
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="level-kiss" name="username" required=""  lay-verify="required"
+                autocomplete="off" value="{$adee.username}" class="layui-input">
+            </div>
+        </div>
+         <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red">*</span>密码
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="level-kiss" name="passwd" required=""  lay-verify="required"
+                autocomplete="off" value={$adee.passwd} class="layui-input">
+            </div>
+        </div>
+              <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red">*</span>角色id
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="level-kiss" name="role_id" required=""  lay-verify="required"
+                autocomplete="off"  class="layui-input">
+            </div>
+        </div>
+         <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red">*</span>最近一次登录ip
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="level-kiss" name="lastloginip" required=""  lay-verify="required"
+                autocomplete="off" value={$adee.lastloginip} class="layui-input">
+            </div>
+        </div>
+              
+                 <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red">*</span>最近一次登录时间
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="level-kiss" name="lastlogintime" required=""  lay-verify="required"
+                autocomplete="off" value={$adee.lastlogintime} class="layui-input">
+            </div>
+        </div>
+                 <div class="layui-form-item">
+            <label for="local" class="layui-form-label">
+                <span class="x-red">*</span>状态
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="level-kiss" name="status" required=""  lay-verify="required"
+                autocomplete="off" value={$adee.status} class="layui-input">
+            </div>
+        </div>
+            
+        
+                <div class="layui-form-item">
+                    <label for="L_sign" class="layui-form-label">
+                    </label>
+                    <button class="layui-btn" key="set-mine" lay-filter="save" lay-submit>
+                        保存
+                    </button>
+                </div>
+            </form>
+            <!-- 右侧内容框架，更改从这里结束 -->
+          </div>
+        </div>
+        <!-- 右侧主体结束 -->
+    </div>
+    <!-- 中部结束 -->
+</body>
+</html>
